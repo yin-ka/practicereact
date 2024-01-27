@@ -1,25 +1,21 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Card from "./components/Card"
-import data from "./components/data"
+import NavBar from "./components/Navbar"
+import Data from "./components/Data"
+import Main from "./components/Main"
+
 function App() {
-    const cards = data.map(item => {
-        return (
-            <Card 
-                img={item.coverImg}
-                rating={item.stats.rating}
-                reviewCount={item.stats.reviewCount}
-                location={item.location}
-                title={item.title}
-                price={item.price}
-            />
-        )
-    })
+  const cards = Data.map(items =>{
+    return (
+             <Main img={items.img}
+             country={items.country}
+             location={items.location}
+             date={items.date}
+             text={items.text}/>
+   )
+  })
   return (
     <>
-    <Navbar />
-    <Hero />
+    <NavBar />
     {cards}
     </>
   )
